@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Video Search UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 登录界面 -->
+    <div id="login-container">
+        <h2>文影灵搜</h2>
+        <input type="text" id="username" placeholder="用户名">
+        <input type="password" id="password" placeholder="密码">
+    
+    <!-- 操作按钮区域 -->
+        <div class="action-buttons">
+            <button class="small-btn" onclick="register()">注册</button>
+            <button class="small-btn" onclick="forgotPassword()">忘记密码</button>
+        </div>
+    
+        <div class="captcha-container">
+            <input type="text" id="checkcode" placeholder="验证码" maxlength="4">
+            <img id="captcha" src="/app/captcha.php" alt="验证码" onclick="this.src='captcha.php?'+Math.random();">
+        </div>
+        <p id="error-message" style="color: red; display: none;"></p>
+        <button onclick="login()">登录</button>
+    </div>
+
+    <!-- 主界面 -->
+    <div id="main-container" style="display: none;">
+        <!-- 对话区域 -->
+        <div id="chat-area"></div>
+        <!-- 输入区域 -->
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="输入文本以查找视频">
+            <button onclick="sendMessage()">发送</button>
+        </div>
+        <!-- 搜索本地视频 -->
+        <div id="video-search">
+            <input type="file" id="video-file" accept="video/*" multiple>
+            <button onclick="searchVideos()">搜索视频</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

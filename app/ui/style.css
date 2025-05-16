@@ -1,0 +1,233 @@
+/* 全局样式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* 登录，没有补充做数据库来存储用户的信息 */
+#login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#login-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#login-container input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+#login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-container button:hover {
+    background-color: #0056b3;
+}
+
+
+#main-container {
+    width: 80%;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/*类似于ChatGPT样式 的一问一答界面*/
+#chat-area {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+#chat-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#chat-area::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#chat-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#chat-area p {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+    max-width: 80%;
+}
+
+#chat-area p:nth-child(even) {
+    background-color: #e0f7fa;
+    align-self: flex-start;
+}
+
+#chat-area p:nth-child(odd) {
+    background-color: #f1f8e9;
+    align-self: flex-end;
+}
+
+#input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+#input-area button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#input-area button:hover {
+    background-color: #0056b3;
+}
+
+#video-search {
+    margin-top: 20px;
+}
+
+#video-search input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#video-search button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+#video-search button:hover {
+    background-color: #218838;
+}
+
+/* 做一个动画效果，看起来比较舒服 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 登录界面样式优化 */
+.action-buttons {
+    display: flex;
+    justify-content: space-between; /* 保持间距 */
+    margin: 10px 0;
+    gap: 20px; /* 增加按钮间间距 */
+}
+
+.small-btn {
+    box-sizing: border-box; /* 确保内边距和边框包含在元素的总宽度和高度内 */
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.2; /* 统一行高 */
+    min-height: 36px; /* 设置最小高度 */
+    transition: background-color 0.3s ease;
+    flex: 1; /* 平均分配宽度 */
+    max-width: 120px; /* 限制最大宽度 */
+}
+
+.small-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* 确保所有按钮使用相同的盒模型 */
+* {
+    box-sizing: border-box;
+}
+
+.captcha-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.captcha-container input {
+    flex: 1;
+}
+
+.captcha-container img {
+    height: 40px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
